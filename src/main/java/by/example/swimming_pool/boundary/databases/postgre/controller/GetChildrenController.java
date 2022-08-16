@@ -24,7 +24,7 @@ public class GetChildrenController {
         return list;
     }
 
-    @GetMapping("/")
+    @GetMapping("/home")
     public String list(Model model) {
         return "index.html";
     }
