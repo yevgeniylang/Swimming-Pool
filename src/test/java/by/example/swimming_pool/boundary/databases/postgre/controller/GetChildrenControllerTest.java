@@ -25,9 +25,9 @@ class GetChildrenControllerTest extends RequestService {
 
     @BeforeEach
     void setUp() {
-        children = new Children("Eugen",15L);
+        /*children = new Children("Eugen",15L);
         this.childrenRepository.save(children);
-        id = children.getId();
+        id = children.getId();*/
     }
 
     @AfterEach

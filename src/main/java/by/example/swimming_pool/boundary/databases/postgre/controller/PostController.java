@@ -5,21 +5,24 @@ import by.example.swimming_pool.boundary.databases.postgre.repositories.Children
 import lombok.AccessLevel;
 import lombok.AllArgsConstructor;
 import lombok.experimental.FieldDefaults;
-import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
-
-import java.util.List;
 
 @RestController
 @AllArgsConstructor
 @FieldDefaults(makeFinal = true, level = AccessLevel.PRIVATE)
-public class GetChildrenController {
-
+public class PostController {
     ChildrenRepository childrenRepository;
 
-    @GetMapping(value = "/get")
-    public List<Children> get() {
-        List<Children> list = this.childrenRepository.findAll();
-        return list;
+    @PostMapping(value = "/post")
+    public ResponseEntity<Object> post(@RequestBody Children children){
+
+        Children children1 = this.childrenRepository.save(children);
+
+        return new ResponseEntity<>(children1, HttpStatus.OK);
+
     }
 }
