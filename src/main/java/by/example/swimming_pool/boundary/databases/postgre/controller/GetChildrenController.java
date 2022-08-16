@@ -26,6 +26,6 @@ public class GetChildrenController {
 
     @GetMapping("/")
     public String list(Model model) {
-        return "index";
+        return "index.html";
     }
 }

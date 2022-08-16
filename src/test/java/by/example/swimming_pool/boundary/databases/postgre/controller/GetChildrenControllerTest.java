@@ -45,6 +45,6 @@ class GetChildrenControllerTest extends RequestService {
 
     @Override
     public String getPath() {
-        return "/getall";
+        return "/get";
     }
 }
