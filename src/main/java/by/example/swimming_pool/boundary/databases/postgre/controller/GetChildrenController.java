@@ -22,6 +22,8 @@ public class GetChildrenController {
 
     @GetMapping(value = "/getall")
     public ResponseEntity<Object> get() {
+        Children children = new Children("Uljana", 10L);
+        this.chilrenRepository.save(children);
         List<Children> list = this.chilrenRepository.findAll();
         return new ResponseEntity<>(list, HttpStatus.OK);
     }
