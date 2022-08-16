@@ -26,6 +26,7 @@ public class GetChildrenController {
 
     @GetMapping("/")
     public String list(Model model) {
+        model.addAttribute(childrenRepository.findAll());
         return "index.html";
     }
 }
