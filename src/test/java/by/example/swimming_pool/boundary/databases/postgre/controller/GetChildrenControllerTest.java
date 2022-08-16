@@ -32,7 +32,7 @@ class GetChildrenControllerTest extends RequestService {
 
     @AfterEach
     void tearDown() {
-        //this.cityRepository.deleteAll();
+        //this.childrenRepository.deleteAll();
     }
 
     @Test

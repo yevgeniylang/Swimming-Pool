@@ -17,9 +17,10 @@ public class GetChildrenController {
 
     ChildrenRepository childrenRepository;
 
-    @GetMapping(value = "/getall")
+    @GetMapping(value = "/")
     public List<Children> get() {
         Children children = new Children("Uljana", 10L);
+        this.childrenRepository.save(children);
         List<Children> list = this.childrenRepository.findAll();
         return list;
     }
