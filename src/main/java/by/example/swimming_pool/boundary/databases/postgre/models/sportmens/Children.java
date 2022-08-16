@@ -1,17 +1,15 @@
 package by.example.swimming_pool.boundary.databases.postgre.models.sportmens;
 
-import lombok.AccessLevel;
-import lombok.Data;
+import lombok.*;
 import lombok.experimental.FieldDefaults;
 
-import javax.persistence.Entity;
 import javax.persistence.*;
-import javax.persistence.Table;
 
 @Entity
 @Table(name = "sportmens")
 @FieldDefaults(level = AccessLevel.PRIVATE)
 @Data
+@NoArgsConstructor
 public class Children {
 
     @Id
