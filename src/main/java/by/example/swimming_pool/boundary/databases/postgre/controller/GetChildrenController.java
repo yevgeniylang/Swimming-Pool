@@ -5,6 +5,7 @@ import by.example.swimming_pool.boundary.databases.postgre.repositories.Children
 import lombok.AccessLevel;
 import lombok.AllArgsConstructor;
 import lombok.experimental.FieldDefaults;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -21,5 +22,10 @@ public class GetChildrenController {
     public List<Children> get() {
         List<Children> list = this.childrenRepository.findAll();
         return list;
+    }
+
+    @GetMapping("/")
+    public String list(Model model) {
+        return "index";
     }
 }
