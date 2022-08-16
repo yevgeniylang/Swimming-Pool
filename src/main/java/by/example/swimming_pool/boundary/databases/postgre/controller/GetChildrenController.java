@@ -21,10 +21,10 @@ public class GetChildrenController {
     ChilrenRepository chilrenRepository;
 
     @GetMapping(value = "/getall")
-    public ResponseEntity<Object> get() {
+    public List<Children> get() {
         Children children = new Children("Uljana", 10L);
         this.chilrenRepository.save(children);
         List<Children> list = this.chilrenRepository.findAll();
-        return new ResponseEntity<>(list, HttpStatus.OK);
+        return list;
     }
 }
