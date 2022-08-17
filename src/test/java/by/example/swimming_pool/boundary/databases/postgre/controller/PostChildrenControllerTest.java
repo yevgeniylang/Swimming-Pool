@@ -1,41 +1,31 @@
 package by.example.swimming_pool.boundary.databases.postgre.controller;
 
 import by.example.swimming_pool.RequestService;
+import by.example.swimming_pool.boundary.databases.postgre.models.dto.ChildrenDto;
 import by.example.swimming_pool.boundary.databases.postgre.models.sportmens.Children;
 import by.example.swimming_pool.boundary.databases.postgre.repositories.ChildrenRepository;
+import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
-import org.junit.jupiter.api.TestTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.test.web.client.TestRestTemplate;
-import org.springframework.core.ParameterizedTypeReference;
-import org.springframework.http.HttpMethod;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.client.RestTemplate;
 
-import java.util.Date;
-import java.util.List;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
 
-import static org.junit.jupiter.api.Assertions.*;
-
-class GetChildrenControllerTest extends RequestService {
+public class PostChildrenControllerTest extends RequestService {
 
     @Autowired
     ChildrenRepository childrenRepository;
 
     ObjectMapper objectMapper = new ObjectMapper();
 
-    Long id;
-    Children children;
-
     @BeforeEach
     void setUp() {
-        children = new Children("Eugen","16-11-1995",15L);
-        this.childrenRepository.save(children);
-        id = children.getId();
     }
 
     @AfterEach
@@ -44,15 +34,20 @@ class GetChildrenControllerTest extends RequestService {
     }
 
     @Test
-    void get() {
+    @DisplayName("Successful post children")
+    void SuccessfulPost() throws JsonProcessingException {
 
-        ResponseEntity<Children> responseEntity = this.getList(Children.class);
-        assertNotNull(responseEntity);
-        assertEquals(HttpStatus.OK.value(), responseEntity.getStatusCodeValue());
+        ChildrenDto childrenDto = new ChildrenDto("Konstantin", "16-11-1995", 200L);
+
+        String json = objectMapper.writeValueAsString(childrenDto);
+
+        ResponseEntity<String> responseEntity = this.postNoAuth(json, String.class);
+        assertNotNull(responseEntity.getBody());
+        assertEquals(HttpStatus.OK, responseEntity.getStatusCode());
     }
 
     @Override
     public String getPath() {
-        return "/get";
+        return "/post";
     }
 }

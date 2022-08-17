@@ -1,6 +1,7 @@
 package by.example.swimming_pool.boundary.databases.postgre.controller;
 
 import by.example.swimming_pool.boundary.databases.postgre.repositories.ChildrenRepository;
+import by.example.swimming_pool.boundary.databases.postgre.service.ChildrenServiceImpl;
 import lombok.AccessLevel;
 import lombok.AllArgsConstructor;
 import lombok.experimental.FieldDefaults;
@@ -15,7 +16,8 @@ import org.springframework.web.bind.annotation.RestController;
 @FieldDefaults(makeFinal = true, level = AccessLevel.PRIVATE)
 public class DeleteController {
 
-    ChildrenRepository childrenRepository;
+    private final ChildrenRepository childrenRepository;
+    private final ChildrenServiceImpl childrenService;
 
     @DeleteMapping(value = "/delete/{Id}")
     public void delete(@PathVariable Long Id){
