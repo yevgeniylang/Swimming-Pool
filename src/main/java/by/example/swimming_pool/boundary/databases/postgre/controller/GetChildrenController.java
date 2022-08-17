@@ -23,9 +23,4 @@ public class GetChildrenController {
         List<Children> list = this.childrenRepository.findAll();
         return list;
     }
-
-    @GetMapping("/home")
-    public String list(Model model) {
-        return "index.html";
-    }
 }
