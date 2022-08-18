@@ -33,7 +33,7 @@ class GetChildrenControllerTest extends RequestService {
 
     @BeforeEach
     void setUp() {
-        children = new Children("Eugen","16-11-1995",15L);
+        children = new Children("Eugen",1995,"test");
         this.childrenRepository.save(children);
         id = children.getId();
     }

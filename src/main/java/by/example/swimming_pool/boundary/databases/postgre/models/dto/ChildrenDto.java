@@ -13,6 +13,6 @@ import lombok.NoArgsConstructor;
 public class ChildrenDto {
 
     String name;
-    String dateOfBirthday;
-    Long time;
+    Integer dateOfBirthday;
+    String result;
 }

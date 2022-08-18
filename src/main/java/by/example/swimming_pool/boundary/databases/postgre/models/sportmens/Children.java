@@ -21,14 +21,14 @@ public class Children {
     String name;
 
     @Column(name = "date_of_birthday")
-    String dateOfBirthday;
+    Integer dateOfBirthday;
 
-    @Column(name = "time")
-    Long time;
+    @Column(name = "result")
+    String result;
 
-    public Children(String name, String dateOfBirthday, Long time) {
+    public Children(String name, Integer dateOfBirthday, String result) {
         this.name = name;
         this.dateOfBirthday = dateOfBirthday;
-        this.time = time;
+        this.result = result;
     }
 }

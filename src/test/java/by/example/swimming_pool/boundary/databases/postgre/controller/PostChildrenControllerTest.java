@@ -2,7 +2,6 @@ package by.example.swimming_pool.boundary.databases.postgre.controller;
 
 import by.example.swimming_pool.RequestService;
 import by.example.swimming_pool.boundary.databases.postgre.models.dto.ChildrenDto;
-import by.example.swimming_pool.boundary.databases.postgre.models.sportmens.Children;
 import by.example.swimming_pool.boundary.databases.postgre.repositories.ChildrenRepository;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -37,7 +36,7 @@ public class PostChildrenControllerTest extends RequestService {
     @DisplayName("Successful post children")
     void SuccessfulPost() throws JsonProcessingException {
 
-        ChildrenDto childrenDto = new ChildrenDto("Konstantin", "16-11-1995", 200L);
+        ChildrenDto childrenDto = new ChildrenDto("Konstantin", 1995,"10.15,36");
 
         String json = objectMapper.writeValueAsString(childrenDto);
 

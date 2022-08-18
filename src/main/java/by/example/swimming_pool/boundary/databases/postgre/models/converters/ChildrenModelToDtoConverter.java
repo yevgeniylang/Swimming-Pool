@@ -12,6 +12,6 @@ public class ChildrenModelToDtoConverter implements Converter<ChildrenDto, Child
         return new Children(
                 source.getName(),
                 source.getDateOfBirthday(),
-                source.getTime());
+                source.getResult());
     }
 }
