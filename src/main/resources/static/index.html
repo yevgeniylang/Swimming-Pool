@@ -38,7 +38,7 @@
 
     function deleteUser(userId) {
         var xhttp = new XMLHttpRequest();
-        xhttp.open("DELETE", "https://test-lang.herokuapp.com/delete/" + userId, true);
+        xhttp.open("DELETE", "http://test-lang.herokuapp.com/delete/" + userId, true);
         xhttp.send();
         loadUsers();
     }
@@ -80,7 +80,7 @@
                 document.getElementById("usersList").innerHTML = html;
             }
         };
-        xhttp.open("GET", "https://test-lang.herokuapp.com/get", true);
+        xhttp.open("GET", "http://test-lang.herokuapp.com/get", true);
         xhttp.send();
     }
 
