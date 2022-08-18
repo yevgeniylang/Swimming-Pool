@@ -38,7 +38,7 @@
 
     function deleteUser(userId) {
         var xhttp = new XMLHttpRequest();
-        xhttp.open("DELETE", "http://localhost:8080/delete/" + userId, true);
+        xhttp.open("DELETE", "https://test-lang.herokuapp.com/delete/" + userId, true);
         xhttp.send();
         loadUsers();
     }
@@ -49,7 +49,7 @@
         var userEmail = document.getElementById("result").value;
 
         var xmlhttp = new XMLHttpRequest();   // new HttpRequest instance
-        xmlhttp.open("POST", "http://localhost:8080/post");
+        xmlhttp.open("POST", "https://test-lang.herokuapp.com/post");
         xmlhttp.setRequestHeader("Content-Type", "application/json");
         xmlhttp.send(JSON.stringify({name: userName, date_of_birthday: userLogin, result: userEmail}));
 
@@ -80,7 +80,7 @@
                 document.getElementById("usersList").innerHTML = html;
             }
         };
-        xhttp.open("GET", "http://localhost:8080/get", true);
+        xhttp.open("GET", "https://test-lang.herokuapp.com/get", true);
         xhttp.send();
     }
 
