@@ -5,13 +5,10 @@ import by.example.swimming_pool.boundary.databases.postgre.repositories.Children
 import lombok.AccessLevel;
 import lombok.AllArgsConstructor;
 import lombok.experimental.FieldDefaults;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import java.sql.Time;
-import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
 

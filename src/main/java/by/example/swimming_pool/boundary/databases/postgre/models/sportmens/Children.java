@@ -4,7 +4,6 @@ import lombok.*;
 import lombok.experimental.FieldDefaults;
 
 import javax.persistence.*;
-import java.util.Date;
 
 @Entity
 @Table(name = "sports_mans")
